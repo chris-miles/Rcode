@@ -118,15 +118,18 @@ for (i in 1:l){
 for (i in 1:l){
     p2 <- add_trace(p2,x=aval2[[i]]$x,  y=aval2[[i]]$y, visible = aval2[[i]]$visible, 
                    name = 'discrete sum', type='scatter', mode = 'markers',
-                   showlegend = TRUE, marker=list(size=12/(0.75*i),color='#8da0cb',opacity=0.6,layer=3))
+                   showlegend = TRUE, marker=list(size=12/(.75*i),color='#8da0cb',opacity=0.65,layer=3))
 }
 
 # add slider control to plot
 p2 <- p2 %>%
     layout(sliders = list(
         list(y=-0.1,active = 0, currentvalue = list(prefix = "n= "),
-             steps = steps2)
-    ), xaxis=list(title="t",titlefont=list(size=12),anchor='free',position=0.0), yaxis=list(title="Sn(t)",titlefont=list(size=12)), title = "continuous version of Sn(t) for Xn ~ unif(0,1)"
+             steps = steps2)), 
+        xaxis=list(title="t",titlefont=list(size=12),anchor='free',position=0.0),
+        yaxis=list(title="Sn(t)",titlefont=list(size=12)), 
+        title = "continuous version of Sn(t) for Xn ~ unif(0,1)",
+        legend = list(x = 0.15, y = 1.03,orientation = 'h', bgcolor = rgb(1,1,1,0) )
     )
 
 
