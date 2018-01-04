@@ -80,4 +80,8 @@ for (j in 1:Nsims){
 meanscores_n = rowMeans(scores_n)
 plot(muvals, meanscores_n)
 
+RowVar <- function(x) {
+  rowSums((x - rowMeans(x))^2)/(dim(x)[2] - 1)
+}
 
+plot(muvals, apply(scores_n,1,var))
