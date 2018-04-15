@@ -11,8 +11,6 @@ Nx = round(L/dx) # number of spatial points
 x = seq(0, L, length.out=Nx+1)       # Mesh points in space
 u = numeric(Nx+1) # empty vector of solutions
 
-
-
 # exact solution to PDE, easily obtained via Fourier 
 exact <- function(x, t){
   k = pi/L;
